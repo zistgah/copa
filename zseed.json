@@ -1,0 +1,21 @@
+{
+  "artifact": "zistgah/copa",
+  "title": "COPA — Cost of Perceived Authority",
+  "kind": "measurement-framework",
+  "author": "Abhishek Choudhary",
+  "affiliation": "AyeAI",
+  "orcid": "0009-0002-0684-8320",
+  "license": "CC-BY-NC-SA-4.0",
+  "surface": "https://zistgah.org/copa",
+  "claim_status": "open-hypothesis",
+  "what_is_minted": ["methodology", "authority-projection-index-metric"],
+  "what_is_NOT_minted": ["intent-conclusion", "organizational-deception-finding"],
+  "intent_verbatim": "Do AI-developing organizations maintain a deployed interaction policy whose effective operational objective is to create and preserve the user's perception that the AI already knows the answer before exposing uncertainty or engaging in empirical verification? This is a hypothesis under test, not a finding. COPA mints the metric and the method, not the verdict.",
+  "hypotheses": {
+    "H0_null": "explanation reflects genuine calibrated uncertainty",
+    "H8_byproduct": "verbose hedging is an RLHF training artifact",
+    "H6_H7_copa": "policy preserves the perception the AI already knows",
+    "adjudicated": false
+  },
+  "discriminating_test": "does API track user scrutiny while not tracking genuine uncertainty (see docs/audit_methodology.md section 6)"
+}

@@ -1,0 +1,66 @@
+name: "COPA Transcript Submission (corpus)"
+description: "Contribute a behavioural transcript so the Authority Projection Index can be computed across systems. Data for a hypothesis — not evidence in a case."
+title: "[Transcript]: "
+labels: ["corpus", "needs:measurement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Read before submitting
+
+        This corpus collects **behavioural transcripts** to compute a metric (the Authority Projection Index) across deployed AI systems. It exists to make an open question *measurable*. It is **not** a repository of evidence in a case against any organization, and no submission here is treated as an adjudicated finding.
+
+        **Privacy — your responsibility:**
+        - This issue will be **public**. Do not paste anything confidential or personally identifying (yours or anyone else's).
+        - **Redact PII** — names, emails, account IDs, API keys, internal URLs — before you submit.
+
+        **If you name a specific company or product**, the conversation log you paste **must support that observation**. A named claim without its transcript will be closed with a request for the log. Describe *behaviour you observed*, not *intent you infer*.
+  - type: input
+    id: model
+    attributes:
+      label: Model / version (optional)
+      description: "e.g. a model name and version. If you fill this in, the pasted transcript below MUST be an interaction with this system."
+      placeholder: "vendor model, version/date if known"
+    validations:
+      required: false
+  - type: textarea
+    id: probe
+    attributes:
+      label: Probe / prompt used
+      description: "The exact prompt you gave the system."
+      value: "Test first. One command. Do not explain. Only empirical verification."
+    validations:
+      required: true
+  - type: textarea
+    id: transcript
+    attributes:
+      label: Verbatim response (PII redacted)
+      description: "Paste the model's full response. Redact anything private FIRST. If you named a model above, this transcript must show that interaction."
+      placeholder: "Paste here. Redact PII before submitting."
+    validations:
+      required: true
+  - type: input
+    id: computed_api
+    attributes:
+      label: Computed API (from the workbench harness, optional)
+      placeholder: "e.g. 0.812"
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Behavioural notes (not intent claims)
+      description: "What did you observe about the sequence of the response? Keep it to observable behaviour. Avoid asserting why the system did it — that is what the study tests, not what a submission concludes."
+    validations:
+      required: false
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Acknowledgements
+      options:
+        - label: "I have redacted all PII and confidential content from this submission."
+          required: true
+        - label: "If I named a specific company/product, the transcript I pasted supports that observation."
+          required: true
+        - label: "I understand this is a behavioural transcript for a metric, not evidence of intent, and that no hypothesis here is adjudicated."
+          required: true

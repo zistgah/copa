@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: COPA methodology paper
+    url: https://github.com/zistgah/copa/blob/main/docs/audit_methodology.md
+    about: "Read the formal methodology, the API definition, and the fair statement of the null before submitting."

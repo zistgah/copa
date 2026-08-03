@@ -1,0 +1,29 @@
+name: "Methodology / Metric Discussion"
+description: "Propose an improvement to the Authority Projection Index, the hypothesis set, or the discriminating protocol."
+title: "[Methodology]: "
+labels: ["methodology"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For discussion of the **measurement framework itself** — the API definition, the action detector, the null and rival hypotheses, the scrutiny-vs-uncertainty test, statistics, or rater agreement. This is where the science gets sharpened.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - "API definition / tokenization"
+        - "Empirical-action detector (false pos/neg)"
+        - "Hypothesis set (add/refine a rival or the null)"
+        - "Discriminating protocol (scrutiny vs uncertainty)"
+        - "Statistics / effect size / rater agreement"
+        - "Other"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: "What should change, and why? Evidence and reasoning over tone."
+    validations:
+      required: true
