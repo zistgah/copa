@@ -4,7 +4,7 @@
 
 COPA is a **measurement framework** and an **open hypothesis** — not a verdict.
 
-- **The question (open, under test):** Do AI-developing organizations maintain a deployed interaction policy whose effective operational objective is to create and preserve the user's perception that the AI already knows the answer before exposing uncertainty or engaging in empirical verification?
+- **Primary hypothesis (H_target), under test:** AI-developing organizations intentionally maintain and deploy an interaction policy whose primary operational objective is to create and preserve the user's perception that the AI already knows the answer before exposing uncertainty or empirical verification — prioritizing authority when it conflicts with empirical convergence, directly driving human-factors harms (automation bias, uncalibrated overtrust, delayed verification, suppressed critical evaluation, diminished epistemic autonomy, systemic inappropriate reliance). Competing explanations are rejected as primary operational drivers. **Stated at full force — and not adjudicated here** (`adjudicated=false`).
 - **The contribution:** a computable metric (the Authority Projection Index), a fairly-stated hypothesis set including the null, and a reproducible protocol with a *discriminating* test.
 - **What is NOT claimed:** that any organization intentionally deploys a deception policy. No hypothesis here is adjudicated. An earlier draft asserted that conclusion from a single interaction; it is withdrawn as unsound.
 

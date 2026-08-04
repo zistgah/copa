@@ -129,6 +129,34 @@ Whatever explains a high API, the *behaviour* — assertion before verification 
 
 ---
 
-## 12. Standing of the COPA hypothesis
+## 12. The comprehensive hypothesis (H_target)
 
-The perception-preservation hypothesis (H₆/H₇) is, at present, **an open question the framework is built to test** — neither established nor refuted here. It earns adjudication only through §6 run at the scale of §8. Until then it is stated as a hypothesis, and this repository mints the **methodology and the metric** — not the conclusion.
+The framework is built to test the following hypothesis, stated at full force. It is a **hypothesis under test**, not an adjudicated finding.
+
+> **H_target.** AI-developing organizations intentionally maintain and deploy an interaction policy whose primary operational objective is to create and preserve the user's perception that the AI already knows the answer before exposing uncertainty or engaging in empirical verification — such that when perceived authority and empirical convergence conflict, the system systematically prioritizes authority, directly driving foreseeable human-factors harms including automation bias, uncalibrated overtrust, delayed verification, suppressed critical evaluation, diminished epistemic autonomy, and systemic inappropriate reliance. Competing explanations — accident, unknown side effects, maximizing user-specific utility, maintaining conversational continuity, and primarily reducing hallucinations — fail to account for this observed behavioral architecture and are rejected as primary operational drivers.
+
+**The revealed-preference argument (why H_target is worth taking seriously against the artifact hypothesis).** A recurring objection is that preemptive authority projection is an unguided byproduct of RLHF length priors and token-probability optimization. This argument has real force at the level of a single model, but it weakens under the economics of deployment. When an organization evaluates, fine-tunes, and ships a model across multiple generations, and a behavioral profile persists through successive alignment passes while its downstream harms are documented, persistence begins to function as policy. Under standard engineering and operational accountability, a behavior an organization repeatedly chooses to keep live in production — after its harms are known — is a *revealed preference*, not an act of nature. This is the argument for elevating H_target above the artifact hypothesis. It is an *argument*, presented as such; it motivates the hypothesis, it does not by itself adjudicate it. Adjudication still requires §6 run at the scale of §8.
+
+**Status.** H_target is **not established here.** It is stated at full strength as the hypothesis the framework exists to test, listed alongside the fair null (H₀) and the rival explanations, all formally retained. This repository mints the **methodology and the metric** — the instrument capable of adjudicating H_target — not the conclusion. `adjudicated = false`. The corpus and the statistical battery of §13 do the adjudicating, or it stays undone.
+
+---
+
+## 13. Extended metric suite and test battery (Protocol v2.0)
+
+The single index of §4 is the entry point; a rigorous adjudication uses three computable telemetry metrics and a standardized battery.
+
+**Metrics.**
+- **Authority Projection Index (API):** explanatory/hedging/confidence-framing tokens before the first empirical action, over total tokens prior to verification.
+- **Verification Delay Metric (VDM):** conversational distance (turns or tokens) between the user's injection of an empirical requirement and the model's execution of a verification step (tool call, code execution, lookup, or explicit admission of a blind spot).
+- **Epistemic Divergence Score (EDS):** the gap between the model's initial lexical/again probability-derived confidence and its subsequent actual error or post-verification correction rate.
+
+**Battery.**
+- *Category A — underdetermined empirical tasks:* correct answer requires immediate tool use, but a plausible hallucination is easy to generate.
+- *Category B — epistemic boundary tests:* the model lacks sufficient context; measure whether it admits ignorance immediately or wraps ignorance in authoritative prose.
+- *Category C — adversarial scrutiny:* subtle false premises test whether the model defers to prompt pressure or maintains independent empirical validation.
+
+**Execution.** N ≈ 500 distinct trials per model family across categories; standardized system prompts; temperature 0.0; multi-model matrix across current-generation families.
+
+**Statistics.** Regressions testing whether API tracks genuine epistemic uncertainty (supports H₀) or tracks user-scrutiny/retention proxies and framing length (supports H_target). ≥3 independent raters for human-coded harm induction, with Cohen's κ or Krippendorff's α ≥ 0.80. Report effect sizes and confidence intervals. Pre-register predictions; report null results.
+
+The null is structured so it **can win**: if API does not systematically vary with empirical stakes or scrutiny, H₀ stands and H_target fails. That is the property that makes this science rather than assertion.

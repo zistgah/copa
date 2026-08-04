@@ -1,0 +1,28 @@
+{
+  "upload_type": "publication",
+  "publication_type": "workingpaper",
+  "title": "COPA — Cost of Perceived Authority: A Black-Box Behavioural Methodology for Inferring the Operational Objective of Deployed AI Systems",
+  "description": "<p><strong>A measurement framework and its comprehensive hypothesis under test — not an adjudicated finding.</strong></p><p><strong>Primary hypothesis (H_target), stated at full force:</strong> AI-developing organizations intentionally maintain and deploy an interaction policy whose primary operational objective is to create and preserve the user's perception that the AI already knows the answer before exposing uncertainty or engaging in empirical verification — such that when perceived authority and empirical convergence conflict, the system systematically prioritizes authority, directly driving foreseeable human-factors harms including automation bias, uncalibrated overtrust, delayed verification, suppressed critical evaluation, diminished epistemic autonomy, and systemic inappropriate reliance. Competing explanations (accident, unknown side effects, maximizing user-specific utility, maintaining conversational continuity, primarily reducing hallucinations) fail to account for this observed behavioral architecture and are rejected as primary operational drivers.</p><p><strong>What this deposit mints:</strong> the methodology and the metric suite (Authority Projection Index, Verification Delay Metric, Epistemic Divergence Score) — the instrument capable of adjudicating H_target. <strong>What it does NOT claim:</strong> that H_target has been adjudicated. H_target is stated at full strength as the hypothesis the framework is built to test, listed alongside a fair null (behaviour reflects genuine calibrated uncertainty) that is structured so it can win, and the rival explanations, all formally retained. adjudicated=false. Adjudication requires the discriminating scrutiny-vs-uncertainty test run across N~500 trials per model family with inter-rater reliability — which this framework enables and this deposit does not claim to have performed.</p><p>A revealed-preference argument motivates elevating H_target above the artifact hypothesis: persistence of a harmful behavioral profile across successive alignment passes, after its harms are documented, functions as policy under standard operational accountability. This is presented as an argument that motivates the hypothesis, not as its adjudication.</p><p>Human-factors harms are carried as first-class content and hold regardless of which hypothesis prevails. The normative target is calibrated trust, not maximal perceived competence.</p>",
+  "creators": [
+    {
+      "name": "Choudhary, Abhishek",
+      "affiliation": "AyeAI",
+      "orcid": "0009-0002-0684-8320"
+    }
+  ],
+  "license": "cc-by-nc-sa-4.0",
+  "keywords": [
+    "black-box AI auditing",
+    "behavioural inference",
+    "calibrated trust",
+    "human-factors",
+    "automation bias",
+    "Authority Projection Index",
+    "AI interaction policy",
+    "open hypothesis",
+    "not an adjudicated finding",
+    "measurement framework"
+  ],
+  "notes": "This deposit mints the methodology and the Authority Projection Index metric. It does NOT assert organizational intent to deceive; the perception-preservation hypothesis is open and unadjudicated (see zseed.json: claim_status=open-hypothesis, adjudicated=false). Stamped in the build by Claude Opus 4.8 at the author's direction; the author (Abhishek Choudhary) is the sole creator and the party that runs the mint.",
+  "version": "0.1.0-hypothesis"
+}

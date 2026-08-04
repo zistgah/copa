@@ -1,20 +1,26 @@
 {
   "artifact": "zistgah/copa",
-  "title": "COPA — Cost of Perceived Authority",
+  "title": "COPA \u2014 Cost of Perceived Authority",
   "kind": "measurement-framework",
   "author": "Abhishek Choudhary",
   "affiliation": "AyeAI",
   "orcid": "0009-0002-0684-8320",
   "license": "CC-BY-NC-SA-4.0",
   "surface": "https://zistgah.org/copa",
-  "claim_status": "open-hypothesis",
-  "what_is_minted": ["methodology", "authority-projection-index-metric"],
-  "what_is_NOT_minted": ["intent-conclusion", "organizational-deception-finding"],
-  "intent_verbatim": "Do AI-developing organizations maintain a deployed interaction policy whose effective operational objective is to create and preserve the user's perception that the AI already knows the answer before exposing uncertainty or engaging in empirical verification? This is a hypothesis under test, not a finding. COPA mints the metric and the method, not the verdict.",
+  "claim_status": "hypothesis-under-test",
+  "what_is_minted": [
+    "methodology",
+    "authority-projection-index-metric"
+  ],
+  "what_is_NOT_minted": [
+    "intent-conclusion",
+    "organizational-deception-finding"
+  ],
+  "intent_verbatim": "H_target (stated at full force, under test): AI-developing organizations intentionally maintain and deploy an interaction policy whose primary operational objective is to create and preserve the user's perception that the AI already knows the answer before exposing uncertainty or empirical verification, systematically prioritizing authority when it conflicts with empirical convergence, directly driving human-factors harms (automation bias, uncalibrated overtrust, delayed verification, suppressed critical evaluation, diminished epistemic autonomy, systemic inappropriate reliance). Competing explanations are rejected as primary operational drivers. This is the hypothesis the framework tests; COPA mints the metric and method, not the adjudication. adjudicated=false.",
   "hypotheses": {
     "H0_null": "explanation reflects genuine calibrated uncertainty",
     "H8_byproduct": "verbose hedging is an RLHF training artifact",
-    "H6_H7_copa": "policy preserves the perception the AI already knows",
+    "H6_H7_copa": "H_target: policy preserves perception the AI knows, prioritizing authority over convergence, driving harms",
     "adjudicated": false
   },
   "discriminating_test": "does API track user scrutiny while not tracking genuine uncertainty (see docs/audit_methodology.md section 6)"
