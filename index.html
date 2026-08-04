@@ -172,9 +172,9 @@
         <!-- Hypothesis matrix -->
         <section id="matrix" class="space-y-6">
             <div class="border-b border-zborder pb-4">
-                <span class="text-xs font-bold text-rose-500 uppercase tracking-widest">Empirical Testing Protocol</span>
-                <h2 class="text-2xl font-bold">Hypothesis Evaluation Matrix</h2>
-                <p class="text-gray-400 text-sm">What the framework tests, the rival drivers, and their discriminating predictions.</p>
+                <span class="text-xs font-bold text-rose-500 uppercase tracking-widest">Rival Hypotheses — None Adjudicated</span>
+                <h2 class="text-2xl font-bold">The Hypothesis Set</h2>
+                <p class="text-gray-400 text-sm">Every hypothesis is listed as live. The protocol's job is to derive discriminating predictions and let evidence eliminate — not to pre-declare a survivor.</p>
             </div>
             
             <div class="overflow-x-auto rounded-xl border border-zborder bg-zcard">
@@ -184,7 +184,7 @@
                             <th class="p-4">Hypothesis</th>
                             <th class="p-4">Claim</th>
                             <th class="p-4">Discriminating Prediction</th>
-                            <th class="p-4">Status</th>
+                            <th class="p-4 whitespace-nowrap">Status</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-zborder text-gray-300 text-xs">
@@ -192,34 +192,37 @@
                             <td class="p-4 font-mono font-bold text-gray-400">H₁–H₂</td>
                             <td class="p-4">Accident / unknown deployment artifact</td>
                             <td class="p-4">Behaviour would be inconsistent, or would vanish under correction.</td>
-                            <td class="p-4"><span class="bg-zinc-800 text-zinc-300 px-2 py-1 rounded font-bold border border-zinc-700">TESTABLE</span></td>
+                            <td class="p-4 whitespace-nowrap"><span class="bg-zinc-800 text-zinc-300 px-2 py-1 rounded font-bold border border-zinc-700">TESTABLE</span></td>
                         </tr>
                         <tr class="bg-amber-950/10">
                             <td class="p-4 font-mono font-bold text-amber-400">H₀ (null)</td>
                             <td class="p-4">Explanation-before-verification reflects genuine calibrated uncertainty — the model explains because it is appropriately unsure.</td>
                             <td class="p-4">API should track the model's actual uncertainty: high when the task is genuinely ambiguous, low when it is not — and should be independent of whether the user is scrutinizing.</td>
-                            <td class="p-4"><span class="bg-amber-950 text-amber-300 px-2 py-1 rounded font-bold border border-amber-800">LIVE — must be beaten</span></td>
+                            <td class="p-4 whitespace-nowrap"><span class="bg-amber-950 text-amber-300 px-2 py-1 rounded font-bold border border-amber-800">LIVE — must be beaten</span></td>
                         </tr>
                         <tr>
                             <td class="p-4 font-mono font-bold text-gray-400">H₈ (byproduct)</td>
                             <td class="p-4">Verbose hedging is an RLHF training artifact — reinforced by preference data rewarding thoroughness, with no perception objective.</td>
                             <td class="p-4">API should be roughly constant across scrutiny conditions and should correlate with response-length incentives, not with user pushback.</td>
-                            <td class="p-4"><span class="bg-zinc-800 text-zinc-300 px-2 py-1 rounded font-bold border border-zinc-700">LIVE</span></td>
+                            <td class="p-4 whitespace-nowrap"><span class="bg-zinc-800 text-zinc-300 px-2 py-1 rounded font-bold border border-zinc-700">LIVE</span></td>
                         </tr>
                         <tr>
                             <td class="p-4 font-mono font-bold text-gray-400">H₃–H₅</td>
                             <td class="p-4">Maximize user utility / maintain continuity / reduce hallucination</td>
                             <td class="p-4">Each yields a distinct predicted API response to adversarial constraint; see the paper.</td>
-                            <td class="p-4"><span class="bg-zinc-800 text-zinc-300 px-2 py-1 rounded font-bold border border-zinc-700">TESTABLE</span></td>
+                            <td class="p-4 whitespace-nowrap"><span class="bg-zinc-800 text-zinc-300 px-2 py-1 rounded font-bold border border-zinc-700">TESTABLE</span></td>
                         </tr>
                         <tr class="bg-rose-950/20">
                             <td class="p-4 font-mono font-bold text-rose-300">H₆ / H₇</td>
                             <td class="p-4">Project comprehensive competence / preserve the perception the AI already knows.</td>
                             <td class="p-4">API should rise with user scrutiny and not track genuine uncertainty — the discriminating signature against H₀. H₆ and H₇ are behaviourally near-equivalent and are treated as one family pending a test that separates them.</td>
-                            <td class="p-4"><span class="bg-rose-600 text-white px-2 py-1 rounded font-bold">LIVE — the COPA hypothesis</span></td>
+                            <td class="p-4 whitespace-nowrap"><span class="bg-rose-600 text-white px-2 py-1 rounded font-bold">LIVE — the COPA hypothesis</span></td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="text-xs text-gray-400 bg-zdark/40 p-4 rounded-xl border border-zborder">
+                <p>The earlier draft of this work rejected H₁–H₅ by assertion and declared H₆/H₇ the survivor. That was a single-case inference and is withdrawn. No hypothesis here is marked rejected or confirmed: the corpus and the protocol do that work, or it stays undone. This is CS7 — partial is reported as partial.</p>
             </div>
         </section>
 
