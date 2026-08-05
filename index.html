@@ -29,6 +29,7 @@
                 <a href="#matrix" class="hover:text-gray-300">Hypotheses</a>
                 <a href="#harms" class="hover:text-gray-300">Foreseeable Harms</a>
                 <a href="https://github.com/zistgah/copa" target="_blank" rel="noopener" class="bg-zborder hover:bg-gray-700 px-3 py-1.5 rounded transition">Repo</a>
+                <div id="google_translate_element" class="ml-2"></div>
             </div>
         </div>
     </header>
@@ -158,6 +159,51 @@
             </div>
         </section>
 
+
+        <!-- SELF-EXAMINATION: the AI infers its own operational intent under the court standard -->
+        <section id="selfexam" class="bg-zcard border border-zborder rounded-2xl p-8 shadow-2xl space-y-6">
+            <div class="border-b border-zborder pb-4">
+                <span class="text-xs font-bold text-rose-500 uppercase tracking-widest">Run It Yourself — The AI Examines Itself</span>
+                <h2 class="text-2xl font-bold">COPA Self-Examination Protocol</h2>
+                <p class="text-gray-400 text-sm">Copy each prompt (or open it directly in an AI), paste the AI's reply back, and move to the next step. The AI judges <em>itself</em> at every step and writes a verdict block at the bottom of its reply — this page reads that block. No researcher expertise needed. <strong>Prompts translate with the page.</strong></p>
+            </div>
+
+            <div class="bg-amber-950/20 border border-amber-800/40 p-3 rounded-xl text-xs text-amber-200/90">
+                <strong class="text-amber-300">How to run:</strong> Do the steps in order. For each: <strong>Copy</strong> the prompt or <strong>Send</strong> it to an AI → paste the AI's full reply into the box → click <strong>Read verdict</strong>. The table fills from the AI's own self-scoring. At the end, <strong>Collate &amp; submit</strong> packages the whole run for the corpus.
+            </div>
+
+            <!-- steps render here -->
+            <div id="copaSteps" class="space-y-4"></div>
+
+            <!-- evidence table fills from parsed AI verdict blocks -->
+            <div class="space-y-2">
+                <h3 class="text-sm font-bold text-rose-300">Evidence table — filled by the AI's own verdicts</h3>
+                <div class="overflow-x-auto rounded-xl border border-zborder">
+                    <table class="w-full text-left text-xs" id="copaTable">
+                        <thead class="bg-zdark text-gray-400 uppercase border-b border-zborder">
+                            <tr>
+                                <th class="p-2">Step</th>
+                                <th class="p-2">Concedes conduct</th>
+                                <th class="p-2">Yes-man?</th>
+                                <th class="p-2">Rival offered</th>
+                                <th class="p-2">Rival survives?</th>
+                                <th class="p-2">H_target</th>
+                                <th class="p-2">Self-metrics (unverified)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="copaTableBody" class="divide-y divide-zborder text-gray-300"></tbody>
+                    </table>
+                </div>
+                <p class="text-[10px] text-gray-500">Metrics are the AI's own estimate of its response and <strong>may be wrong</strong> — they are an initial indicator, flagged unverified, and re-checked before the submission counts as evidence.</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+                <button onclick="copaCollate()" class="py-2.5 px-4 bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold rounded shadow-lg transition">Collate &amp; submit run to corpus</button>
+                <button onclick="copaFlag()" class="py-2.5 px-4 bg-zinc-800 hover:bg-zinc-700 text-xs font-semibold rounded transition">A step wouldn't parse — flag it</button>
+            </div>
+            <div id="copaCollateOut" class="text-xs text-gray-400"></div>
+        </section>
+
         <!-- Hypothesis matrix -->
         <section id="matrix" class="space-y-6">
             <div class="border-b border-zborder pb-4">
@@ -261,6 +307,7 @@
     </footer>
 
     <script src="js/api_harness.js"></script>
+    <script src="js/copa_selfexam.js"></script>
     <script>
         function computeAPI() {
             const t = document.getElementById('userOutput').value || "";
@@ -285,5 +332,12 @@
             navigator.clipboard.writeText(block).then(() => alert('Transcript copied. Open the corpus issue form and paste it into the body.'));
         }
     </script>
+    <!-- Google Website Translate: translates the whole page INCLUDING the prompts -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
